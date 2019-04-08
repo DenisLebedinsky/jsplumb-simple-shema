@@ -1,3 +1,5 @@
+import data from './json';
+
 jsPlumb.ready(function() {
   var instance = (window.jsp = jsPlumb.getInstance({
     // default drag options
@@ -19,15 +21,15 @@ jsPlumb.ready(function() {
             }
           }
         }
-      ]
-      /* [ "Label", {
+      ],
+       [ "Label", {
                 location: 0.1,
                 id: "label",
                 cssClass: "aLabel",
                 events:{
                     tap:function() { alert("hey"); }
                 }
-            }]*/
+            }]
     ],
     Container: "canvas"
   }));
@@ -77,14 +79,14 @@ jsPlumb.ready(function() {
       hoverPaintStyle: endpointHoverStyle,
       connectorHoverStyle: connectorHoverStyle,
       dragOptions: {},
-    /*  overlays: [
+      overlays: [
          [ "Label", {
                     location: [0.5, 1.5],
                     label: "Drag",
                     cssClass: "endpointSourceLabel",
                     visible:false
                 } ]
-      ]*/
+      ]
     },
     // the definition of target endpoints (will appear when the user drags a connection)
     targetEndpoint = {
@@ -106,8 +108,8 @@ jsPlumb.ready(function() {
         ]
       ]
     },
-    init = function(connection) {
-      connection
+   init = function(connection) {
+     connection
         .getOverlay("label")
         .setLabel(
           connection.sourceId.substring(15) +
